@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spam Detection Result</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Spam Detection Result</h1>
+    <p class="result-message">The message is classified as: {{ result }}</p>
+    {% if result == "spam" %}
+      <div class="alert alert-danger">
+        <strong>Caution!</strong> This message is likely spam. Be careful and avoid clicking on any links or opening attachments.
+      </div>
+    {% elif result == "ham" %}
+      <div class="alert alert-success">
+        <strong>This message is not spam.</strong> It's safe to open and read.
+      </div>
+    {% else %}
+      <div class="alert alert-warning">
+        <strong>Error:</strong> An error occurred during classification. Please try again.
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
